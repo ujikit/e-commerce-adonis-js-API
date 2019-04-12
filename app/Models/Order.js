@@ -4,6 +4,11 @@
 const Model = use('Model')
 
 class Order extends Model {
+
+	static get primaryKey () {
+    return 'key_order'
+  }
+
 }
 
 module.exports = Order

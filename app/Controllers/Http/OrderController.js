@@ -61,8 +61,21 @@ class OrderController {
 	}
 
 	async destroy ({ request, response }) {
-		const { data_destroy } = request.all()
-		return data_destroy
+		const key_order = request.params.id
+		const user = await Order.find(key_order)
+		await user.delete()
+		try {
+			return {
+				"status": "success",
+				"data": "Successfully delete cart item :)"
+			}
+		}
+		catch (e) {
+			return {
+				"status": "error",
+				"data": `Error while delete cart item: ${e}`
+			}
+		}
 	}
 
 }
