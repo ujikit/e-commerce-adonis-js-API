@@ -2,6 +2,14 @@
 const mysql = require('mysql')
 const Route = use('Route')
 
+// Login
+Route.post('/register', 'AuthController.register')
+
+// Profile
+// Route.group(() => {
+// 	Route.get('user/:id', 'ProfileController.getProfile').middleware(['auth:jwt'])
+// }).prefix('api/v1')
+
 // Products
 Route.group(() => {
 	Route.get('products', 'ProductController.index')

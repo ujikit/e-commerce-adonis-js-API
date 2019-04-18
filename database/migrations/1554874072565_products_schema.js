@@ -6,7 +6,7 @@ const Schema = use('Schema')
 class ProductsSchema extends Schema {
   up () {
     this.create('products', (table) => {
-      table.increments('key_product')
+      table.increments()
       table.string('category_product', 30)
       table.string('name_product', 255)
       table.string('image_product', 255)

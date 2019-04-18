@@ -6,14 +6,15 @@ const Schema = use('Schema')
 class OrdersSchema extends Schema {
   up () {
     this.create('orders', (table) => {
-      table.integer('key_order').unsigned().notNullable()
-      table.string('category_order', 30)
-      table.string('name_order', 255)
-      table.string('image_order', 255)
-      table.string('price_order', 20)
-      table.text('description_order')
+      table.increments()
+      table.integer('id_product_order').unsigned()
+      table.integer('id_user_order').unsigned()
+      table.string('category_product_order', 30)
+      table.string('name_product_order', 255)
+      table.string('image_product_order', 255)
+      table.string('price_product_order', 20)
+      table.text('description_product_order')
       table.timestamps()
-      table.foreign('key_order').references('key_product').inTable('products')
     })
   }
 

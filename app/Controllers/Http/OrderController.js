@@ -33,7 +33,7 @@ class OrderController {
 		}
 		// ready saving into database
 		const order = new Order()
-		order.key_order = key_product
+		order.id_product_order = key_product
 		order.category_order = category_product
 		order.name_order = name_product
 		order.name_order = name_product
